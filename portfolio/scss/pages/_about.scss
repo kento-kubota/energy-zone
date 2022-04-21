@@ -1,0 +1,258 @@
+@use "../foundation/" as fnd;
+
+// パンくずリスト
+.breadcrumb {
+  @include fnd.breadcrumb;
+}
+// aboutページ調整
+.about {
+  &__wrap {
+    @include fnd.mq("pc") {
+      width: 70%;
+      max-width: 1024px;
+    }
+  }
+  &__comment {
+    display: none;
+    margin: 50px auto 70px;
+    font-size: 1.6rem;
+    margin-top: 25px;
+    letter-spacing: 0.05em;
+    line-height: 2.1;
+    @include fnd.mq("tab") {
+      display: block;
+      width: 80%;
+      text-align: center;
+    }
+    @include fnd.mq("pc") {
+      // text-align: left;
+      font-size: 2rem;
+      width: 640px;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+// Aboutページ独自スタイル
+.aboutSec {
+  background-color: fnd.$navy;
+  padding-bottom: 50px;
+  // パンクズリスト
+  &__title {
+    @include fnd.h2("自己紹介");
+    margin: 90px auto 50px;
+    @include fnd.mq("pc") {
+      margin-bottom: 100px;
+    }
+  }
+  &__name {
+    display: block;
+    margin: 50px auto 0;
+    font-size: 2rem;
+    @include fnd.mq("tab") {
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+  }
+  &__detail {
+    margin: 30px auto 0;
+  }
+}
+// backgroundセクション
+.background {
+  position: relative;
+  background-color: fnd.$navy;
+  padding-top: 20px;
+  padding-bottom: 220px;
+  @include fnd.mq("tab") {
+    padding-top: 130px;
+  }
+
+  &__title {
+    @include fnd.h2("略歴");
+    width: 180px;
+    padding-bottom: 80px;
+    @include fnd.mq("tab") {
+      width: 240px;
+    }
+  }
+  &__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-right: 30px;
+    @include fnd.mq("tab") {
+      padding-top: 70px;
+    }
+  }
+  &__date,
+  &__text {
+    font-size: 1.4rem;
+    color: fnd.$light-gray;
+  }
+  &__date {
+    width: 210px;
+    text-align: right;
+  }
+  &__text {
+    width: 240px;
+    text-align: left;
+  }
+
+  &__line {
+    @include fnd.mq("sp-mini") {
+      padding: 6px 20px 0;
+    }
+
+    padding: 6px 35px 0;
+  }
+  &__border {
+    position: relative;
+    width: 2px;
+    background-color: fnd.$white;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -4.5px;
+      width: 10px;
+      height: 10px;
+      background-color: fnd.$white;
+      border-radius: 50%;
+    }
+    &:first-of-type {
+      height: 106px;
+    }
+    &:nth-of-type(2) {
+      background-color: fnd.$blue;
+      height: 114px;
+    }
+    &:nth-of-type(3) {
+      background-color: fnd.$blue;
+      height: 55px;
+    }
+    &:nth-of-type(4) {
+      height: 64px;
+    }
+    &:nth-of-type(5) {
+      background-color: fnd.$yellow;
+      height: 70px;
+    }
+    &:nth-of-type(6) {
+      background-color: fnd.$yellow;
+      height: 80px;
+    }
+    &:last-of-type {
+      &::before {
+        border: 1px solid fnd.$white;
+        background-color: fnd.$navy;
+      }
+    }
+  }
+  &__day,
+  &__content {
+    line-height: 1.6;
+    &:first-of-type {
+      margin-bottom: 82px;
+    }
+    &:nth-of-type(2) {
+      margin-bottom: 92px;
+    }
+    &:nth-of-type(3) {
+      margin-bottom: 34px;
+    }
+    &:nth-of-type(4) {
+      margin-bottom: 41px;
+    }
+    &:nth-of-type(5) {
+      margin-bottom: 24px;
+    }
+    &:nth-of-type(6) {
+      margin-bottom: 57px;
+    }
+  }
+  &__day:nth-of-type(5) {
+    margin-bottom: 47px;
+  }
+}
+.ex {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  // transform: translateX(-50%);
+  background-color: fnd.$navy;
+  text-align: left;
+
+  &__club,
+  &__design {
+    position: relative;
+    margin-top: 30px;
+    font-size: 1.2rem;
+  }
+  &__club::before,
+  &__design::before {
+    content: "";
+    position: absolute;
+    background-color: fnd.$blue;
+    top: 6px;
+    left: -70px;
+    height: 4px;
+    border-radius: 2px;
+    width: 50px;
+  }
+  &__design::before {
+    background-color: fnd.$yellow;
+  }
+}
+
+// sns-blogセクション
+.info {
+  background-color: fnd.$dark-gray;
+  &__title {
+    @include fnd.h2("その他活動");
+    width: 160px;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    @include fnd.mq("tab") {
+      font-size: 3.6rem;
+      width: 230px;
+    }
+  }
+  &__text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: fnd.$light-gray;
+    @include fnd.mq("tab") {
+      font-size: 1.6rem;
+    }
+  }
+  .sns__icons {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-top: 40px;
+    @include fnd.mq("tab") {
+      width: 470px;
+    }
+  }
+  .sns__wrap {
+    @include fnd.mq("pc") {
+      width: 60px;
+    }
+  }
+
+  .contact__title {
+    margin: 150px auto 60px;
+  }
+  .contact__text {
+    font-size: 1.2rem;
+    @include fnd.mq("tab") {
+      font-size: 1.6rem;
+    }
+  }
+  .btn {
+    @include fnd.btn-contact;
+  }
+}

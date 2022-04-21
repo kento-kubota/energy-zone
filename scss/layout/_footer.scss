@@ -1,0 +1,44 @@
+@use '../foundation'as fnd;
+
+
+.footer {
+  width: 100vw;
+  text-align: center;
+  padding-bottom: 40px;
+
+  .btn {
+    @include fnd.btn;
+    margin-top: 50px;
+  }
+
+  .logo {
+    width: 100px;
+    margin: 40px auto;
+  }
+
+  .logo__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .listPC {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .listPC__ja {
+    line-height: 60px;
+  }
+
+  .listSub {
+    font-size: 1.4rem;
+    margin: 10px 0;
+  }
+
+  .copyright {
+    font-size: 1.2rem;
+    color: fnd.$light-gray;
+  }
+}

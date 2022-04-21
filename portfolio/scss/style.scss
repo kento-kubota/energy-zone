@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// base
+@use "./base/base";
+
+// layout
+@use "./layout/header/header";
+@use "./layout/header/headerScroll";
+@use "./layout/main/mainVisual";
+@use "./layout/main/mainWorks";
+@use "./layout/main/mainAbout";
+@use "./layout/main/mainSkills";
+@use "./layout/main/mainContact";
+@use "./layout/footer";
+@use "./layout/spMenu";
+
+// pages
+@use "./pages/about";
+@use "./pages/works";
+@use "./pages/skills";
+@use "./pages/policy";
+@use "./pages/_workDetail.scss";
+@use "./pages/contact";
+
+// animation
+@use "./animation/hover";
+@use "./animation/menuActive";
+@use "./animation/scroll";
+@use "./animation/timeline";
+@use "./animation/fadeIn";

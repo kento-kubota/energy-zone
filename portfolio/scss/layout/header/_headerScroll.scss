@@ -1,0 +1,40 @@
+@use "../../foundation" as fnd;
+
+// スクロール後のヘッダーデザイン
+.header--active {
+  width: 98%;
+  margin: 15px 0 0 1%;
+  background-color: fnd.$white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 60px;
+  .header__inner {
+    padding-left: 50px;
+  }
+  .header__btnBlue {
+    padding-top: 24px;
+    &::before {
+      top: 18%;
+    }
+  }
+  // ロゴサイズ変更
+  .logo {
+    width: 172px;
+    height: 20px;
+  }
+  // メニューバー変更
+  .listPC__link {
+    padding-top: 18px;
+  }
+  // 日本語消す
+  .listPC__ja {
+    display: none;
+  }
+  // ボーダーで仕切る
+  .listPC__en {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border-left: 1px solid fnd.$navy;
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../foundation/"as fnd;
+
+.topList {
+  padding-top: 80px;
+
+  &__item {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include fnd.mq("tab") {}
+
+  // slick
+  /*ドットナビゲーションの設定*/
+
+  .slick-dots {
+    text-align: center;
+    z-index: 10;
+  }
+
+  .slick-dots li {
+    display: inline-block;
+    margin: 30px 5px;
+  }
+
+  .slick-dots button {
+    cursor: pointer;
+    color: transparent;
+    outline: none;
+    width: 70px;
+    /*ドットボタンのサイズ*/
+    height: 5px;
+    /*ドットボタンのサイズ*/
+    display: block;
+    background: fnd.$light-gray;
+    /*ドットボタンの色*/
+    border-width: 0;
+  }
+
+  .slick-dots .slick-active button {
+    background: fnd.$orange;
+    /*ドットボタンの現在地表示の色*/
+    border-width: 0;
+  }
+}

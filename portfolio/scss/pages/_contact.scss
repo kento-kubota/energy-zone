@@ -1,0 +1,241 @@
+@use "../foundation/" as fnd;
+
+.form {
+  background-color: fnd.$navy;
+  padding-bottom: 0;
+  // パンクズリスト
+  .breadcrumb {
+    @include fnd.breadcrumb;
+  }
+  &__title {
+    color: fnd.$white;
+    @include fnd.h2("お問い合わせ");
+    margin: 90px auto 90px;
+    width: 130px;
+    @include fnd.mq("tab") {
+      width: 160px;
+    }
+  }
+}
+
+// Contact form 7
+
+.contact-form {
+  text-align: left;
+}
+.wpcf7-list-item {
+  margin-bottom: 20px;
+}
+.wpcf7 {
+  margin: 0 auto;
+  @include fnd.mq("tab") {
+    width: 70%;
+  }
+}
+
+// ContactForm7 カスタマイズ
+.form {
+  &__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    -webkit-filter: drop-shadow(-8px -9px 15px #16161d);
+    filter: drop-shadow(-8px -9px 15px #16161d);
+  }
+  &__need,
+  &__no-need {
+    padding: 4px 13px;
+    background: fnd.$blue;
+    border-radius: 5px;
+    margin-right: 11px;
+  }
+  &__no-need {
+    background: fnd.$dark-gray;
+  }
+
+  table {
+    margin: 0 auto;
+  }
+  table th,
+  table td {
+    margin-bottom: 25px;
+    width: 100%;
+    display: block;
+  }
+  table th,
+  .radioBtn {
+    color: #bcbec4;
+  }
+  table tr {
+    font-size: 1.4rem;
+  }
+
+  input,
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    color: fnd.$white;
+    border-radius: 9px;
+    background: #252530;
+    -webkit-box-shadow: -5px -5px 11px #131318, 5px 5px 11px #373748;
+    box-shadow: -5px -5px 11px #131318, 5px 5px 11px #373748;
+    outline: none;
+    border: none;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-input-placeholder {
+      color: #909091;
+    }
+    &::-moz-placeholder {
+      color: #909091;
+    }
+    &:-ms-input-placeholder {
+      color: #909091;
+    }
+    &::-ms-input-placeholder {
+      color: #909091;
+    }
+    &::placeholder {
+      color: #909091;
+    }
+  }
+  textarea {
+    width: 320px;
+    height: 160px;
+    overflow-y: scroll;
+  }
+  // ボタンデザイン
+
+  input[type="submit"] {
+    width: 108px;
+    margin-top: 25px;
+    border-radius: 72px;
+    background: -o-linear-gradient(305deg, #21212b, #282833);
+    background: linear-gradient(145deg, #21212b, #282833);
+    -webkit-box-shadow: 5px 5px 10px #202029, -5px -5px 10px #2a2a37;
+    box-shadow: 5px 5px 10px #202029, -5px -5px 10px #2a2a37;
+    &:active {
+      border-radius: 72px;
+      background: #252530;
+      -webkit-box-shadow: inset 5px 5px 10px #202029,
+        inset -5px -5px 10px #2a2a37;
+      box-shadow: inset 5px 5px 10px #202029, inset -5px -5px 10px #2a2a37;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+  .wpcf7-radio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .wpcf7-list-item-label {
+    position: relative;
+    padding-left: 32px;
+    font-size: 1.4rem;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: 5px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 150px;
+      background: -o-linear-gradient(305deg, #282833, #21212b);
+      background: linear-gradient(145deg, #282833, #21212b);
+      -webkit-box-shadow: 5px 5px 10px #141419, -5px -5px 10px #363647;
+      box-shadow: 5px 5px 10px #141419, -5px -5px 10px #363647;
+    }
+    &::after {
+      display: none;
+      position: absolute;
+      content: " ";
+      top: 20px;
+      width: 92px;
+      height: 1px;
+      left: 32px;
+      border-radius: 10px;
+      background: -o-linear-gradient(bottom, #ffe703, #e6c203);
+      background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#ffe703),
+        to(#e6c203)
+      );
+      background: linear-gradient(0deg, #ffe703, #e6c203);
+      -webkit-box-shadow: 0px -1px 3px #665601, 0 -2px 6px #ffff05;
+      box-shadow: 0px -1px 3px #665601, 0 -2px 6px #ffff05;
+    }
+  }
+  .wpcf7-list-item:nth-of-type(2) .wpcf7-list-item-label::after {
+    width: 122px;
+  }
+  .wpcf7-list-item:last-of-type .wpcf7-list-item-label::after {
+    width: 48px;
+  }
+}
+
+input[type="radio"]:checked + .wpcf7-list-item-label::before {
+  -webkit-box-shadow: inset 2px 2px 2px #141419, inset 2px 2px 2px #363647,
+    2px 2px 10px #141419, -2px -2px 10px #363647;
+  box-shadow: inset 2px 2px 2px #141419, inset 2px 2px 2px #363647,
+    2px 2px 10px #141419, -2px -2px 10px #363647;
+}
+input[type="radio"]:checked + .wpcf7-list-item-label::after {
+  display: block;
+}
+
+// tab 横並び
+.form__tbl > tbody {
+  @include fnd.mq("tab") {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    // height: 490px;
+    height: 500px;
+  }
+  .form__right {
+    @include fnd.mq("tab") {
+      margin-left: 70px;
+    }
+    @include fnd.mq("pc") {
+      margin-left: 150px;
+    }
+  }
+}
+
+// ボタン配置
+.form__btn {
+  width: 108px;
+  margin: 0 auto;
+}
+
+// エラー文赤
+.wpcf7-not-valid-tip {
+  margin-top: 10px;
+}

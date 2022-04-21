@@ -1,0 +1,51 @@
+@use "./_variables.scss"as clr;
+@use "./font-family"as font;
+@use "./mq"as mq;
+
+// h2スタイル
+@mixin h2($name) {
+  position: relative;
+  font-size: 3.2rem;
+  margin: 300px 0 50px;
+  letter-spacing: .05em;
+  font-weight: bold;
+  text-align: center;
+  color: clr.$orange;
+
+  @include mq.mq('pc') {
+    margin: 200px 0 40px;
+
+  }
+
+  @include mq.mq('tab') {
+    font-size: 2.5rem;
+    margin: 100px 0 25px;
+  }
+
+
+  &::before {
+    content: "#{$name}";
+    position: absolute;
+    color: clr.$black;
+    top: -180px;
+    left: 0;
+    right: 0;
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+    font-size: 20rem;
+    font-family: font.$en;
+    overflow: hidden;
+    z-index: -1;
+
+    @include mq.mq("pc") {
+      font-size: 14rem;
+      top: -120px;
+    }
+
+    @include mq.mq('tab') {
+      font-size: 7rem;
+      top: -60px;
+    }
+
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../foundation" as fnd;
+
+.contact {
+  padding-top: 200px;
+  color: fnd.$navy;
+  // タイトルデザイン
+  &__title {
+    @include fnd.h2("お問い合わせ");
+    margin-bottom: 100px;
+    width: 130px;
+    @include fnd.mq("tab") {
+      width: 160px;
+    }
+  }
+  &__text {
+    width: 60%;
+    min-width: 350px;
+    margin: 10px auto;
+    @include fnd.mq('pc') {
+      width: 40%;
+    }
+
+  }
+
+  .btn {
+    @include fnd.btn_contact;
+    color: fnd.$white;
+  }
+}

@@ -1,0 +1,304 @@
+@use "../../foundation/"as fnd;
+
+.price {
+  max-width: 1000px;
+
+  &__title {
+    @include fnd.h2('PRICE');
+  }
+
+  &__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 400px;
+    margin: 60px auto 40px;
+
+    @include fnd.mq('tab') {
+      width: 230px;
+    font-size: 1.2rem;
+    }
+
+  }
+
+  &__capa {
+    &::before {
+      margin-right: 15px;
+
+      @include fnd.mq('tab') {
+        margin-right: 5px;
+      }
+
+    }
+
+    &:first-child {
+      &::before {
+        content: '◯';
+
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        content: '△';
+
+      }
+    }
+
+    &:last-child {
+      &::before {
+        content: '×';
+
+      }
+    }
+  }
+// 料金表（全体）
+  &__grid {
+    display: grid;
+    grid-template:
+      "general general general"
+      "basic   workout shape"
+      "mass    eating  goods";
+    gap: 10px;
+
+    @include fnd.mq('pc') {
+      grid-template:
+        "general"
+        "basic"
+        "workout"
+        "shape"
+        "massage"
+        "meal"
+        "rental";
+        max-width: 610px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+  }
+// 基礎デザイン
+  &__box {
+    text-align: center;
+    background-color: fnd.$black;
+    padding: 50px 0;
+    -webkit-box-shadow: 3px 3px 3px #00000029;
+    box-shadow: 3px 3px 3px #00000029;
+    border-radius: 5px;
+  }
+
+  &__name {
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__num {
+    font-size: 4rem;
+    letter-spacing: 0.07em;
+    margin-bottom: 40px;
+  }
+
+  &__yen {
+    font-size: 2rem;
+  }
+
+  .price__num {
+    color: fnd.$light-gray;
+  }
+
+  // グリッド（一般）
+  .general {
+    grid-area: general;
+
+
+    >.general__grid {
+      display: grid;
+      width: 80%;
+      max-width: 740px;
+      margin: 0 auto;
+      grid-template:
+        "title1 title2 title3 title4 title5 title6"
+        "   -      -      -     -      -      -  " 30px
+        "term   sauna  massage meal  beauty man";
+
+      @include fnd.mq('pc') {
+        grid-template:
+          "title1 term"
+          "title2 sauna"
+          "title3 massage"
+          "title4 meal"
+          "title5 beauty"
+          "title6 man";
+        width: 200px;
+
+      }
+    }
+  }
+// グリッド（マンツーマンコーズ）
+  .course {
+    >.general__grid {
+      display: grid;
+      margin: 0 auto;
+      grid-template:
+        "title1 term"
+        "title2 sauna"
+        "title3 massage"
+        "title4 meal"
+        "title5 beauty"
+        "title6 man";
+      width: 200px;
+    }
+
+    .title1,
+    .title2,
+    .title3,
+    .title4,
+    .title5,
+    .title6 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  // グリッド（共通）
+  .title1,
+  .title2,
+  .title3,
+  .title4,
+  .title5,
+  .title6 {
+    @include fnd.mq('pc') {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  }
+
+  .term,
+  .sauna,
+  .massage,
+  .meal,
+  .beauty,
+  .man {
+    color: fnd.$light-gray;
+    text-align: center;
+  }
+
+  .title1 {
+    grid-area: title1;
+  }
+
+  .title2 {
+    grid-area: title2;
+  }
+
+  .title3 {
+    grid-area: title3;
+  }
+
+  .title4 {
+    grid-area: title4;
+  }
+
+  .title5 {
+    grid-area: title5;
+  }
+
+  .title6 {
+    grid-area: title6;
+  }
+
+  .term {
+    grid-area: term;
+  }
+
+  .sauna {
+    grid-area: sauna;
+  }
+
+  .massage {
+    grid-area: massage;
+  }
+
+  .meal {
+    grid-area: meal;
+  }
+
+  .beauty {
+    grid-area: beauty;
+  }
+
+  .man {
+    grid-area: man;
+  }
+
+  .basic {
+    grid-area: basic;
+  }
+
+  .workout {
+    grid-area: workout;
+  }
+
+  .shape {
+    grid-area: shape;
+  }
+
+  .massage {
+    grid-area: massage;
+  }
+
+  .meal {
+    grid-area: meal;
+  }
+
+  .rental {
+    grid-area: rental;
+  }
+
+  .basic {
+    .price__num {
+      color: fnd.$orange;
+    }
+  }
+  .workout {
+    .price__num {
+      color: fnd.$blue;
+    }
+  }
+  .shape {
+    .price__num {
+      color: fnd.$pink;
+    }
+  }
+  .goods__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 190px;
+    margin: 0 auto;
+
+    .goods__left {
+      text-align: left;
+    }
+    .goods__name, .goods__cost {
+      margin-bottom: 20px;
+    }
+  }
+  .mess, .eating{
+    .price__num {
+      margin-bottom: 0;
+    }
+  }
+  .btn {
+    @include fnd.btn;
+  }
+}

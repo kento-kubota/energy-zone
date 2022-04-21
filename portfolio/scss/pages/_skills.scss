@@ -1,0 +1,150 @@
+@use "../foundation/" as fnd;
+
+.breadcrumb {
+  @include fnd.breadcrumb;
+}
+
+.skillSet {
+  background-color: fnd.$navy;
+  @include fnd.mq("pc") {
+    padding-bottom: 470px;
+  }
+
+  // パンクズリスト
+  &__title {
+    @include fnd.h2("できること");
+    margin: 90px auto 90px;
+  }
+  .skills__flexwrap {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  // h3下マージン
+  .design__wrap,
+  .coding__wrap {
+    @include fnd.mq("pc") {
+      margin-bottom: 50px;
+    }
+  }
+  .design,
+  .coding {
+    position: relative;
+    width: 100%;
+  }
+
+  .design__il {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 348px;
+      left: 43px;
+    }
+  }
+  .design__xd {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 506px;
+      left: 43px;
+    }
+  }
+  .design__pp {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 720px;
+      left: 43px;
+    }
+  }
+  .design__seo {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 903px;
+      left: 43px;
+    }
+  }
+  .coding__wp {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 720px;
+      left: 43px;
+    }
+  }
+  .coding__git {
+    @include fnd.mq("pc") {
+      position: absolute;
+      top: 903px;
+      left: 43px;
+    }
+  }
+  // .design__il,
+  // .design__xd,
+  // .design__pp,
+  // .design__seo,
+  // .design__css,
+  // .design__js,
+  // .design__jq,
+  // .design__wp,
+  // .design__git,
+  // .coding__ps,
+  // .coding__il,
+  // .coding__xd,
+  // .coding__pp,
+  // .coding__seo,
+  // .coding__css,
+  // .coding__js,
+  // .coding__jq,
+  // .coding__wp,
+  // .coding__git
+
+  .design__ps,
+  .design__il,
+  .design__xd,
+  .design__pp,
+  .design__seo,
+  .design__css,
+  .design__js,
+  .design__jq,
+  .design__wp,
+  .design__git,
+  .coding__ps,
+  .coding__il,
+  .coding__xd,
+  .coding__pp,
+  .coding__seo,
+  .coding__css,
+  .coding__js,
+  .coding__jq,
+  .coding__wp,
+  .coding__git {
+    line-height: 1.8;
+    @include fnd.mq("tab") {
+      width: 60%;
+    }
+    @include fnd.mq("pc") {
+      width: 80%;
+      .design__line,
+      .coding__line {
+        margin-top: 10px;
+      }
+    }
+  }
+  .design__content {
+    color: fnd.$light-gray;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding-top: 15px;
+  }
+  &__comment {
+    display: block;
+    @include fnd.mq("sp-mini") {
+      width: 80%;
+    }
+
+    .sp_nowrap {
+      display: block;
+      @include fnd.mq("sp-mini") {
+        display: none;
+      }
+    }
+  }
+}

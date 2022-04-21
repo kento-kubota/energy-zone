@@ -1,0 +1,45 @@
+@use "../foundation/"as fnd;
+
+#price {
+
+  .listPC__item {
+    &:nth-of-type(3) {
+      position: relative;
+      font-weight: bold;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 22px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: fnd.$orange;
+      }
+
+      &::before {
+        left: 10px;
+      }
+
+      &::after {
+        right: 10px;
+      }
+    }
+  }
+
+  .spMenu .list__item:nth-of-type(3) {
+    color: fnd.$orange;
+    font-weight: bold;
+  }
+
+  .price__title {
+    @include fnd.mq('tab') {
+
+      margin-top: 200px;
+    }
+
+  }
+}

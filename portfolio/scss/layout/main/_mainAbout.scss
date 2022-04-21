@@ -1,0 +1,181 @@
+@use "../../foundation" as fnd;
+
+.about {
+  background-color: fnd.$navy;
+  text-align: center;
+  padding-top: 100px;
+  // タイトルデザイン
+  &__title {
+    @include fnd.h2("自己紹介");
+    margin-bottom: 100px;
+  }
+
+  &__wrap {
+    width: 330px;
+    margin: 0 auto;
+    @include fnd.mq("tab") {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      width: 90%;
+    }
+    @include fnd.mq("pc") {
+      width: 60%;
+    }
+  }
+  &__photo {
+    height: 300px;
+    margin: 0 auto;
+    @include fnd.mq("tab") {
+      margin: 0;
+      margin-right: 50px;
+    }
+    @include fnd.mq("pc") {
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    color: fnd.$light-gray;
+    @include fnd.mq("tab") {
+      text-align: left;
+      width: 60%;
+    }
+  }
+
+  &__name {
+    display: none;
+    color: fnd.$white;
+    font-size: 2.7rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    @include fnd.mq("tab") {
+      display: block;
+    }
+  }
+  &__info {
+    display: none;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    @include fnd.mq("tab") {
+      display: block;
+    }
+  }
+  &__detail {
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    line-height: 2.1;
+    text-align: left;
+    margin: 50px 0;
+    @include fnd.mq("tab") {
+      font-size: 1.6rem;
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+  }
+}
+// snsエリア
+.sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  @include fnd.mq("tab") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 86%;
+    margin: 0 auto;
+  }
+  @include fnd.mq("pc") {
+    width: 50%;
+    min-width: 650px;
+  }
+
+  &__icons {
+    @include fnd.mq("sp-mini") {
+      -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    width: 340px;
+    margin: 15px auto 0;
+    @include fnd.mq("tab") {
+      width: 60%;
+      max-width: 530px;
+      margin-top: 50px;
+    }
+    @include fnd.mq("pc") {
+      margin-top: 90px;
+      max-width: 600px;
+    }
+  }
+  &__account {
+    display: block;
+    height: 100%;
+    transition: all 0.5s;
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 300;
+    @include fnd.mq("tab") {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__wrap {
+    width: 53px;
+    margin: 0 auto;
+    @include fnd.mq("tab") {
+      width: 60px;
+    }
+    @include fnd.mq("pc") {
+      width: 70px;
+    }
+  }
+  &__img {
+    width: 100%;
+  }
+
+  .btn {
+    @include fnd.btn_details;
+    margin: 50px auto 0;
+    @include fnd.mq("tab") {
+      margin: 0 5%;
+    }
+  }
+}

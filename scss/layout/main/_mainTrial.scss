@@ -1,0 +1,71 @@
+@use "../../foundation/"as fnd;
+
+.trial {
+  &__title {
+    @include fnd.h2('TRIAL')
+  }
+  &__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 70px;
+    @include fnd.mq('pc') {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-top: 0;
+    }
+
+  }
+  &__box {
+    width: 30%;
+    padding: 40px 20px;
+    border: 1px solid fnd.$orange;
+    border-radius: 5px;
+    @include fnd.mq('pc') {
+      width: 70%;
+      margin: 40px 0;
+      max-width: 510px;
+    }
+    @include fnd.mq('tab') {
+      width: 90%;
+      max-width: 320px;
+    }
+
+
+  }
+  &__step {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  &__content {
+    font-size: 1.4rem;
+    line-height: 2.3;
+    text-align: left;
+  }
+  .arrow {
+    width: 12px;
+    height: 12px;
+    border: 2px solid;
+    border-color: fnd.$white fnd.$white transparent transparent;
+    border-radius: 1px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    @include fnd.mq('pc') {
+      -webkit-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+  }
+  .btn {
+    @include fnd.btn;
+  }
+}

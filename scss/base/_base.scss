@@ -1,0 +1,91 @@
+@use "../foundation"as fnd;
+// 共通スタイルを指定
+
+html {
+  font-size: 62.5%; // フォントサイズ 1rem = 10px
+}
+
+body {
+  // 文字＋背景スタイル指定
+  line-height: 1.3;
+  font-size: 1.6rem;
+  font-family: fnd.$jp;
+  background-color: fnd.$dark-gray;
+  color: fnd.$white;
+
+
+
+  // フォントサイズ設定
+  h2 {
+    font-size: 3.5rem;
+
+    @include fnd.mq('tab') {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  h3 {
+    font-size: 2rem;
+
+  }
+
+  section {
+    margin: 0 auto 200px;
+    width: 80%;
+    max-width: 870px;
+    text-align: center;
+
+    @include fnd.mq('pc') {
+      width: 90%;
+    }
+
+
+    @include fnd.mq('tab') {
+      margin-bottom: 100px;
+    }
+  }
+
+  // タイトル下共通スタイルここから
+  .text {
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    text-align: center;
+
+
+    @include fnd.mq('tab') {
+      font-size: 1.4rem;
+      max-width: 80%;
+      margin: 0 auto;
+
+    }
+  }
+
+  // ここまで
+
+  @include fnd.mq('pc') {
+    .brpc {
+      display: none;
+    }
+  }
+
+  @include fnd.mq('tab') {
+    .br {
+      display: none;
+    }
+
+    .sp {
+      display: none;
+    }
+  }
+
+  .spOnly {
+    display: none;
+
+    @include fnd.mq('tab') {
+      display: block;
+    }
+
+  }
+}

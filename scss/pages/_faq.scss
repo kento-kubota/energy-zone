@@ -1,0 +1,208 @@
+@use "../foundation/"as fnd;
+
+#faq {
+  .listPC__item {
+    &:nth-of-type(4) {
+      position: relative;
+      font-weight: bold;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 22px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: fnd.$orange;
+      }
+
+      &::before {
+        left: 10px;
+      }
+
+      &::after {
+        right: 10px;
+      }
+    }
+  }
+
+  .faq {
+    @include fnd.mq('tab') {
+      width: 100%;
+    }
+
+    &__title {
+      @include fnd.h2('FAQ');
+
+      @include fnd.mq('tab') {
+        margin-top: 200px;
+      }
+
+    }
+  }
+
+  .acMenu {
+    &__wrap {
+      margin: 20px auto;
+      width: 100%;
+
+      @include fnd.mq('tab') {
+        margin: 5px auto;
+      }
+
+    }
+
+    &__qTxtbox {
+      z-index: 10;
+      background-color: fnd.$black;
+      -webkit-transition: all .4s;
+      -o-transition: all .4s;
+      transition: all .4s;
+      cursor: pointer;
+    }
+
+    &__txtbox,
+    &__aTxtbox {
+      position: relative;
+      text-align: left;
+      padding: 30px 30px;
+      border-radius: 5px;
+
+
+      @include fnd.mq('tab') {
+        padding: 20px 30px 20px 15px;
+      }
+
+
+      &::before,
+      &::after {
+        position: absolute;
+      }
+
+      &::before {
+        content: 'Q';
+        font-family: fnd.$en;
+        color: fnd.$orange;
+        font-size: 2.5rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 30px;
+
+        @include fnd.mq('tab') {
+          left: 16px;
+        }
+
+      }
+
+      &::after {
+        content: '';
+        width: 14px;
+        height: 14px;
+        border-top: 3px solid fnd.$orange;
+        border-right: 3px solid fnd.$orange;
+        -webkit-transform: translateY(-50%) rotate(135deg);
+        -ms-transform: translateY(-50%) rotate(135deg);
+        transform: translateY(-50%) rotate(135deg);
+        top: 50%;
+        right: 30px;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+
+        @include fnd.mq('tab') {
+          width: 10px;
+          height: 10px;
+        }
+
+      }
+    }
+
+    .arrow {
+      &::after {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+
+    &__title,
+    &__aTitle {
+      padding-left: 75px;
+      font-size: 1.6rem;
+
+      @include fnd.mq('tab') {
+        font-size: 1.4rem;
+        padding-left: 50px;
+        padding-right: 30px;
+        line-height: 1.5;
+      }
+
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 30px;
+        background-color: fnd.$orange;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-radius: 5px;
+        left: 75px;
+
+        @include fnd.mq('tab') {
+          left: 50px;
+        }
+
+      }
+    }
+
+    &__box {
+      display: none;
+      text-align: left;
+    }
+
+    &__aTxtbox {
+      &::before {
+        content: 'A';
+        color: fnd.$blue;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__aTitle {
+      &::before {
+        background-color: fnd.$blue;
+      }
+    }
+
+    &__aText {
+      padding-left: 105px;
+      font-size: 1.4rem;
+      line-height: 2.2;
+      margin-top: -10px;
+
+      @include fnd.mq('tab') {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+
+      }
+
+    }
+  }
+
+  .spMenu .list__item:nth-of-type(4) {
+    color: fnd.$orange;
+    font-weight: bold;
+  }
+
+}

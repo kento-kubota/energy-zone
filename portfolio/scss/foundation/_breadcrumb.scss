@@ -1,0 +1,107 @@
+@use "./variables" as clr;
+@use "./mq";
+
+// パンくずリスト
+@mixin breadcrumb {
+  margin-top: 0;
+  margin-left: 30px;
+  @include mq.mq("tab") {
+    margin-top: 50px;
+    margin-left: 55px;
+  }
+
+  &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: clr.$white;
+    font-size: 1.2rem;
+    list-style: none;
+    overflow: hidden;
+    @include mq.mq("tab") {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    height: 33px;
+    line-height: 33px;
+    background-color: clr.$dark-gray;
+    -webkit-filter: drop-shadow(10px 6px 8px clr.$shadow-navy);
+    filter: drop-shadow(10px 6px 8px clr.$shadow-navy);
+    transition: all 0.5s;
+    @include mq.mq("tab") {
+      height: 45px;
+      line-height: 45px;
+    }
+  }
+  // allow
+  &__item::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    border-top: 1px solid clr.$white;
+    border-right: 1px solid clr.$white;
+    margin-top: -1px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &__link {
+    padding: 0 16px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    @include mq.mq("tab") {
+      padding: 0 20px;
+    }
+  }
+  // 現在地の一つ前
+  &__item:nth-last-child(2) {
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    &::after {
+      display: none;
+    }
+    .breadcrumb__link {
+      padding-right: 97px;
+      @include mq.mq("tab") {
+        padding-right: 160px;
+      }
+    }
+  }
+  // 現在地
+  &__item:last-of-type {
+    padding: 0 24px;
+    background-color: clr.$blue;
+    border-radius: 23px;
+    -webkit-transform: translateX(-79px);
+    -ms-transform: translateX(-79px);
+    transform: translateX(-79px);
+    -webkit-filter: none;
+    filter: none;
+    white-space: nowrap;
+    @include mq.mq("tab") {
+      -webkit-transform: translateX(-129px);
+      -ms-transform: translateX(-129px);
+      transform: translateX(-129px);
+      padding: 0 46px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  // home icon
+  &__icon {
+    @include mq.mq("sp-mini") {
+      display: none;
+    }
+    margin-right: 10px;
+  }
+}

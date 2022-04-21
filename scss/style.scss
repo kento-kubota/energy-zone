@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// animation
+@use "./animation/activeHeader";
+@use "./animation/hover";
+@use "./animation/fadeIn";
+
+// base
+@use "./base/base";
+
+// layout
+@use "./layout/header";
+@use "./layout/main/main";
+@use "./layout/main/mainReason";
+@use "./layout/main/mainService";
+@use "./layout/main/mainProgram";
+@use "./layout/main/mainPrice";
+@use "./layout/main/mainTrial";
+@use "./layout/main/mainStore";
+@use "./layout/main/pageTop";
+
+@use "./layout/footer";
+@use "./layout/spMenu";
+
+// pages
+@use "./pages/about";
+@use "./pages/price";
+@use "./pages/facility";
+@use "./pages/faq";
+@use "./pages/apply";

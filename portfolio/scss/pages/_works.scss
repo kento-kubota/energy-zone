@@ -1,0 +1,141 @@
+@use "../foundation/" as fnd;
+
+.archive {
+  background-color: fnd.$navy;
+  padding-bottom: 50px;
+  // パンクズリスト
+  .breadcrumb {
+    @include fnd.breadcrumb;
+  }
+  &__title {
+    @include fnd.h2("実績");
+    margin: 90px auto 90px;
+  }
+}
+
+// フィルターリスト
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 290px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  @include fnd.mq("tab") {
+    font-size: 1.6rem;
+    width: 490px;
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    display: block;
+  }
+  // メニューアクティブ
+  .is--active {
+    position: relative;
+    color: fnd.$yellow;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background-color: fnd.$yellow;
+    }
+  }
+}
+
+// works一覧
+.worksList {
+  width: 60%;
+  max-width: 1400px;
+  margin: 60px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  list-style: none;
+  @include fnd.mq("tab") {
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    &::after {
+      content: "";
+      display: block;
+      width: 30%;
+    }
+  }
+  &__item {
+    font-size: 1.2rem;
+    margin: 0 10px 70px;
+    @include fnd.mq("tab") {
+      width: 30%;
+    }
+  }
+  // hideクラス
+  .is--hide {
+    // スマホ画面は該当投稿以外消す
+    display: none;
+    @include fnd.mq("tab") {
+      // tablet以上の画面は該当投稿以外薄く表示
+      display: block;
+      -webkit-animation-name: fadeInAnime;
+      animation-name: fadeInAnime;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      opacity: 0.4;
+      will-change: opacity; /*  カクツキ対策 */
+    }
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100% !important;
+    height: 100%;
+    margin-bottom: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  &__name {
+    padding-bottom: 10px;
+  }
+}
+// フェードアニメーション
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+@keyframes fadeInAnime {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}

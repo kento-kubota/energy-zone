@@ -1,0 +1,42 @@
+@use "./_variables.scss" as clr;
+@use "./mq" as mq;
+
+// h2スタイル
+@mixin h2($name) {
+  position: relative;
+  width: 92px;
+  font-weight: 500;
+  margin: 0 auto;
+  &::before {
+    // インターポレーションで文字列を引数にできる。
+    content: "#{$name}";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    font-size: 1.4rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin: 15px auto auto;
+    height: 2px;
+    background: clr.$blue;
+  }
+  @include mq.mq("tab") {
+    width: 120px;
+    font-weight: 500;
+    &::before {
+      top: -23px;
+      font-size: 1.6rem;
+    }
+    &::after {
+      top: 50px;
+      width: 100%;
+    }
+  }
+}

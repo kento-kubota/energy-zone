@@ -1,0 +1,80 @@
+@use "../foundation" as fnd;
+// ハンバーガーメニュークリック時アニメーション
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// ハンバーガーメニューのアニメーション
+.header__right--active {
+  .header__btnLine {
+    background: transparent;
+  }
+  .header__btnLine::before,
+  .header__btnLine::after {
+    background-color: fnd.$white;
+    z-index: 10;
+  }
+  .header__btnLine::before {
+    -webkit-transform: translateY(0) rotate(45deg);
+    -ms-transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(45deg);
+  }
+  .header__btnLine::after {
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+.spMenu {
+  &--active {
+    -webkit-animation: fade 0.4s ease-in-out 1 normal forwards;
+    animation: fade 0.4s ease-in-out 1 normal forwards;
+    display: block;
+    // position: fixed;
+    .spMenu__title {
+      -webkit-animation: fade 0.4s ease-in-out 0.1s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.1s 1 normal forwards;
+    }
+
+    .list__item:first-of-type {
+      -webkit-animation: fade 0.4s ease-in-out 0.2s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.2s 1 normal forwards;
+    }
+    .list__item:nth-of-type(2) {
+      -webkit-animation: fade 0.4s ease-in-out 0.3s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.3s 1 normal forwards;
+    }
+    .list__item:nth-of-type(3) {
+      -webkit-animation: fade 0.4s ease-in-out 0.4s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.4s 1 normal forwards;
+    }
+    .list__item:nth-of-type(4) {
+      -webkit-animation: fade 0.4s ease-in-out 0.5s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.5s 1 normal forwards;
+    }
+    .list__item:last-of-type {
+      -webkit-animation: fade 0.4s ease-in-out 0.6s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.6s 1 normal forwards;
+    }
+    .subList__item {
+      -webkit-animation: fade 0.4s ease-in-out 0.7s 1 normal forwards;
+      animation: fade 0.4s ease-in-out 0.7s 1 normal forwards;
+      transition: all 0.5s;
+    }
+    @include fnd.mq("pc") {
+      display: none;
+    }
+  }
+}

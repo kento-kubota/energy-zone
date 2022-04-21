@@ -1,0 +1,138 @@
+@use "../../foundation/"as fnd;
+
+.program {
+  &__title {
+    @include fnd.h2('PROGRAM')
+  }
+
+  &__wrap {
+    margin-top: 70px;
+
+  }
+
+  &__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include fnd.mq('pc') {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 70%;
+      margin: 40px auto 0;
+    }
+
+    @include fnd.mq('tab') {
+      width: 90%;
+      max-width: 450px;
+    }
+
+  }
+
+  &__name {
+    position: relative;
+    font-family: fnd.$en;
+    height: 160px;
+    width: 220px;
+    color: fnd.$black;
+    font-weight: bold;
+    padding: 60px 0 60px 30px;
+    text-align: center;
+    font-size: 3.5rem;
+
+    @include fnd.mq('pc') {
+      width: 100%;
+      height: inherit;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 3rem;
+    }
+
+    @include fnd.mq('tab') {
+      padding: 15px 0;
+      font-size: 2.5rem
+    }
+
+
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0;
+      top: 0;
+      right: -64px;
+      border-style: solid;
+      border-width: 80px 0 80px 64px;
+
+      @include fnd.mq('pc') {
+        display: none;
+      }
+
+    }
+  }
+
+  .orange {
+    background-color: fnd.$orange;
+
+    &::after {
+      border-color: transparent transparent transparent fnd.$orange;
+    }
+  }
+
+  .blue {
+    background-color: fnd.$blue;
+
+    &::after {
+      border-color: transparent transparent transparent fnd.$blue;
+    }
+  }
+
+  .pink {
+    background-color: fnd.$pink;
+
+    &::after {
+      border-color: transparent transparent transparent fnd.$pink;
+    }
+  }
+
+  &__p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 650px;
+    height: 160px;
+    font-size: 1.5rem;
+    padding-left: 120px;
+    line-height: 1.8;
+    text-align: left;
+    background-color: fnd.$black;
+
+    @include fnd.mq('pc') {
+      width: 100%;
+      height: inherit;
+      padding: 20px 30px;
+      line-height: 2;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    @include fnd.mq('tab') {
+      text-align: center;
+    }
+
+  }
+}

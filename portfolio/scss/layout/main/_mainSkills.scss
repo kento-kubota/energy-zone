@@ -1,0 +1,134 @@
+@use "../../foundation" as fnd;
+
+// skillsタイトル
+.skills {
+  position: relative;
+  background-color: fnd.$dark-gray;
+  // タイトルデザイン
+  &__title {
+    letter-spacing: 2px;
+    @include fnd.h2("できること");
+    margin-bottom: 50px;
+    @include fnd.mq("tab") {
+      margin-bottom: 100px;
+    }
+    &::before {
+      letter-spacing: 1px;
+    }
+  }
+  &__flexwrap {
+    @include fnd.mq("pc") {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 80%;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+  }
+  .btn {
+    @include fnd.btn-details;
+  }
+}
+// スキル design-coding
+.design,
+.coding {
+  padding: 40px 0 60px;
+  width: 70%;
+  background-color: fnd.$navy;
+  margin: 0 auto 30px;
+  border-radius: 30px;
+  @include fnd.mq("tab") {
+    padding-bottom: 50px;
+    @include fnd.mq("pc") {
+      width: 45%;
+      margin: 0 0 30px;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 30px;
+  }
+  &__icon {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+  // スキル名＋数値
+  &__ps,
+  &__il,
+  &__xd,
+  &__pp,
+  &__seo,
+  &__css,
+  &__js,
+  &__jq,
+  &__wp,
+  &__git {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    @include fnd.mq("pc") {
+      padding-top: 25px;
+    }
+  }
+  &__css,
+  &__ps {
+    padding-top: 20px;
+    @include fnd.mq("pc") {
+      padding-top: 0;
+    }
+  }
+  // ライン
+  &__line {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 2.5px;
+    width: 100%;
+    height: 5px;
+    background-color: fnd.$blue;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 2.5px;
+      width: 0;
+      height: 5px;
+      background-color: fnd.$yellow;
+      -webkit-transition: width 2s ease-in-out;
+      -o-transition: width 2s ease-in-out;
+      transition: width 2s ease-in-out;
+    }
+  }
+}
+
+// skillsセクション下の三角形の背景
+.bg-triangle {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  bottom: -5vh;
+  border-style: solid;
+  border-color: fnd.$dark-gray transparent transparent transparent;
+  border-width: 5vh 50vw 0 50vw;
+  @include fnd.mq("tab") {
+    border-top-width: 10vh;
+    bottom: -10vh;
+  }
+}

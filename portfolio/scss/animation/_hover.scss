@@ -1,0 +1,86 @@
+@use "../foundation" as fnd;
+
+@use "sass:color";
+
+// ヘッダー / フッターホバー
+.header__contact:hover {
+  background-color: fnd.$blue-hover;
+}
+
+.footer .listPC__item:hover,
+.header .listPC__item:hover {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+.header .listPC__item:hover {
+  .listPC__en {
+    padding-bottom: 5px;
+  }
+}
+.footer .sns:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+// SPメニュー
+.spMenu .list__item::before {
+  transition: all 0.5s;
+}
+.spMenu .list__item:hover::before {
+  background-color: fnd.$yellow;
+  transform: scale(1.5);
+}
+// ボタンホバー
+.btn:hover {
+  background-color: fnd.$blue-hover;
+  color: fnd.$light-gray;
+}
+
+// パンくずリストホバー
+.breadcrumb__item:hover {
+  font-size: 1.6rem;
+}
+// allow
+.breadcrumb__item:hover::after {
+  font-size: inherit;
+}
+// リンクなし
+.breadcrumb__item:last-of-type:hover {
+  font-size: inherit;
+}
+
+// Worksページフィルターホバー
+.search__item::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: fnd.$yellow;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.search__item:hover::after {
+  width: 50%;
+}
+
+// Top-Aboutセクション-+spMenu - snsホバー
+
+.sns__account:hover, .subList__item:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+// プライバシーポリシー
+.footer__privacy a:hover {
+  text-decoration: underline;
+}

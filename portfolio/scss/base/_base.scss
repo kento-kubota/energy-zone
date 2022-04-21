@@ -1,0 +1,45 @@
+@use "../foundation" as fnd;
+// 共通スタイルを指定
+
+html {
+  font-size: 62.5%; // フォントサイズ 1rem = 10px
+}
+
+body {
+  // 文字＋背景スタイル指定
+  width: 100%;
+  line-height: 1.3;
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-family: fnd.$font-family;
+  color: fnd.$white;
+  background-color: fnd.$yellow;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  // フォントサイズ設定
+  h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    @include fnd.mq(tab) {
+      font-size: 4rem;
+    }
+  }
+  h3 {
+    position: relative;
+    font-size: 2.5rem;
+    @include fnd.mq(tab) {
+      font-size: 3rem;
+    }
+  }
+  section {
+    padding: 100px 0 100px;
+    text-align: center;
+    @include fnd.mq("pc") {
+      padding-top: 130px;
+    }
+  }
+}

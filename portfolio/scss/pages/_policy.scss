@@ -1,0 +1,153 @@
+@use "../foundation/" as fnd;
+
+.breadcrumb {
+  @include fnd.breadcrumb;
+}
+.policy {
+  background-color: fnd.$navy;
+  padding-bottom: 0;
+  &__title {
+    @include fnd.h2("プライバシーポリシー");
+    margin: 90px auto 90px;
+    width: 220px;
+    @include fnd.mq("tab") {
+      width: 300px;
+    }
+  }
+  &__top,
+  &__content {
+    text-align: left;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    letter-spacing: 0.05em;
+    color: fnd.$light-gray;
+  }
+  &__top {
+    margin: 0 auto 50px;
+    width: 70%;
+    max-width: 1000px;
+    @include fnd.mq("tab") {
+      width: 82%;
+    }
+    @include fnd.mq("pc") {
+      width: 70%;
+    }
+  }
+  &__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 1020px;
+    width: 70%;
+    margin: 0 auto;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+    @include fnd.mq("tab") {
+      height: 1850px;
+      width: 90%;
+    }
+    @include fnd.mq("pc") {
+      width: 980px;
+      height: 1530px;
+    }
+  }
+  &__name {
+    font-size: 1.75rem;
+    padding-top: 40px;
+  }
+  &__item {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-left: 30px;
+    @include fnd.mq("tab") {
+      width: 40%;
+    }
+    // 各アイコン設定
+    &:first-of-type::before {
+      position: absolute;
+      content: url(./img/content_paste_search_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(2)::before {
+      position: absolute;
+      content: url(./img/security_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(3)::before {
+      position: absolute;
+      content: url(./img/perm_identity_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(4)::before {
+      position: absolute;
+      content: url(./img/lock_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(5)::before {
+      position: absolute;
+      content: url(./img/request_quote_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(6)::before {
+      position: absolute;
+      content: url(./img/info_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(7)::before {
+      position: absolute;
+      content: url(./img/trending_up_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+      width: 30px;
+      height: 30px;
+    }
+    &:nth-of-type(8)::before {
+      position: absolute;
+      content: url(./img/warning_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(9)::before {
+      position: absolute;
+      content: url(./img/copyright_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:nth-of-type(10)::before {
+      position: absolute;
+      content: url(./img/share_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+    &:last-of-type::before {
+      position: absolute;
+      content: url(./img/published_with_changes_white_24dp.svg);
+      top: 40px;
+      left: -35px;
+    }
+  }
+  &__content {
+    padding-top: 16px;
+  }
+  &__detail {
+    color: fnd.$light-gray;
+    font-size: 1.2rem;
+    padding-top: 20px;
+  }
+  &__link {
+    color: fnd.$link;
+  }
+}

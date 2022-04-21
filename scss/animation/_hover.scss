@@ -1,0 +1,65 @@
+@use '../foundation'as fnd;
+@use "sass:color";
+
+// PCヘッダー
+.header,
+.footer {
+  .listPC {
+    &__item:hover {
+      position: relative;
+      color: fnd.$light-gray;
+      margin-top: -10px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: fnd.$orange;
+      }
+
+      &::before {
+        left: 10px;
+        height: 10px;
+      }
+
+      &::after {
+        right: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  &__contact:hover {
+    &::before {
+      opacity: 0;
+    }
+  }
+}
+
+// ボタン
+.btn:hover {
+  &::before {
+    opacity: 0 !important;
+  }
+}
+
+// アコーディオン
+#faq .acMenu__qTxtbox:hover {
+  background: color.scale(fnd.$black, $lightness: -20%);
+}
+
+// ページトップ
+.pageTop:hover {
+  background: color.scale(fnd.$black, $lightness: -20%);
+}
+
+
+// フッター
+.listSub__link:hover {
+  text-decoration: underline;
+}

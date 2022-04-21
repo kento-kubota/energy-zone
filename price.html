@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./scss/plugin/slick.css" />
+  <!-- slick -->
+  <link rel="stylesheet" href="https://use.typekit.net/mgi7nge.css" />
+  <!--  web font -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <script>
+    (function (d) {
+      var config = {
+          kitId: 'iip0uuz',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout),
+        tk = d.createElement("script"),
+        f = false,
+        s = d.getElementsByTagName("script")[0],
+        a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config)
+        } catch (e) {}
+      };
+      s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <!-- Favicon -->
+  <link rel='icon' href='./img/favicon.ico'>
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>ENERGY ZONE（エナジーゾーン）</title>
+</head>
+
+<body id="price">
+  <!----------------　ヘッダーここから　---------------->
+  <header class="header">
+    <div class="header__inner">
+      <div class="logo">
+        <a href="./index.html" class="logo__link">
+          <h1 class="logo__wrap">
+            <img src="./img/energy_zone_logo.png" alt="エナジーゾーン" class="logo__img" />
+          </h1>
+        </a>
+      </div>
+      <!-- ---------------- PCメニューバー ---------------- -->
+      <div class="header__right">
+        <nav class="pcMenu">
+          <ul class="listPC">
+            <li class="listPC__item">
+              <a href="./about.html" class="listPC__link">
+                <div class="listPC__ja">エナジーゾーンとは</div>
+              </a>
+            </li>
+            <li class="listPC__item">
+              <a href="./facility.html" class="listPC__link">
+                <div class="listPC__ja">施設紹介</div>
+              </a>
+            </li>
+            <li class="listPC__item">
+              <a href="./price.html" class="listPC__link">
+                <div class="listPC__ja">料金プラン</div>
+              </a>
+            </li>
+            <li class="listPC__item">
+              <a href="./faq.html" class="listPC__link">
+                <div class="listPC__ja">よくある質問</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- ---------------- 無料体験ボタン ---------------- -->
+        <div class="header__contact">
+          <a href="./apply.html" class="header__btn">
+            <div class="header__last">無料体験</div>
+            <div class="header__last">受付中!</div>
+          </a>
+        </div>
+        <!---------------- ハンバーガーメニュー ---------------->
+        <div class="header__menu">
+          <span class="header__btnLine"></span>
+        </div>
+      </div>
+    </div>
+    <!-------------- SPメニュー ---------------->
+    <nav class="spMenu">
+      <ul class="list">
+        <li class="list__item">
+          <a href="./about.html" class="list__link">
+            <div class="list__ja">エナジーゾーンとは</div>
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="./facility.html" class="list__link">
+            <div class="list__ja">施設紹介</div>
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="./price.html" class="list__link">
+            <div class="list__ja">料金プラン</div>
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="./faq.html" class="list__link">
+            <div class="list__ja">よくある質問</div>
+          </a>
+        </li>
+      </ul>
+      <div class="sub">
+        <div class="btn">
+          <a href="./apply.html" class="btn__link">無料体験</a>
+        </div>
+        <a href="./index.html" class="privacy">プライバシーポリシー</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="price">
+      <h2 class="price__title fade-in">ご利用料金</h2>
+      <p class="price__text text fade-in">お客様に満足していただくため、充実のサービスをご用意しております。</p>
+      <div class="price__flex fade-in">
+        <p class="price__capa">利用可能</p>
+        <p class="price__capa">別料金</p>
+        <p class="price__capa">利用不可</p>
+      </div>
+      <div class="price__grid">
+        <div class="price__box general fade-in">
+          <h3 class="price__name">一般利用</h3>
+          <p class="price__text">月額</p>
+          <p class="price__num">7,000<span class="price__yen">円</span></p>
+          <div class="general__grid">
+            <p class="title1">期間</p>
+            <p class="term">無期限</p>
+            <p class="title2">サウナ</p>
+            <p class="sauna">◯</p>
+            <p class="title3">整体</p>
+            <p class="massage">△</p>
+            <p class="title4">食事管理</p>
+            <p class="meal">×</p>
+            <p class="title5">美容エステ</p>
+            <p class="beauty">×</p>
+            <p class="title6">マンツーマン</p>
+            <p class="man">×</p>
+          </div>
+        </div>
+        <div class="price__box basic course fade-in">
+          <h3 class="price__name">Basic Plan</h3>
+          <p class="price__text">月額</p>
+          <p class="price__num">80,000<span class="price__yen">円</span></p>
+          <div class="general__grid">
+            <p class="title1">期間</p>
+            <p class="term">無期限</p>
+            <p class="title2">サウナ</p>
+            <p class="sauna">◯</p>
+            <p class="title3">整体</p>
+            <p class="massage">△</p>
+            <p class="title4">食事管理</p>
+            <p class="meal">×</p>
+            <p class="title5">美容エステ</p>
+            <p class="beauty">×</p>
+            <p class="title6">マンツーマン</p>
+            <p class="man">×</p>
+          </div>
+        </div>
+        <div class="price__box workout course fade-in">
+          <h3 class="price__name">Workout Plan</h3>
+          <p class="price__text">月額</p>
+          <p class="price__num">100,000<span class="price__yen">円</span></p>
+          <div class="general__grid">
+            <p class="title1">期間</p>
+            <p class="term">無期限</p>
+            <p class="title2">サウナ</p>
+            <p class="sauna">◯</p>
+            <p class="title3">整体</p>
+            <p class="massage">△</p>
+            <p class="title4">食事管理</p>
+            <p class="meal">×</p>
+            <p class="title5">美容エステ</p>
+            <p class="beauty">×</p>
+            <p class="title6">マンツーマン</p>
+            <p class="man">×</p>
+          </div>
+        </div>
+        <div class="price__box shape course fade-in">
+          <h3 class="price__name">ShapeUp Plan</h3>
+          <p class="price__text">月額</p>
+          <p class="price__num">60,000<span class="price__yen">円</span></p>
+          <div class="general__grid">
+            <p class="title1">期間</p>
+            <p class="term">無期限</p>
+            <p class="title2">サウナ</p>
+            <p class="sauna">◯</p>
+            <p class="title3">整体</p>
+            <p class="massage">△</p>
+            <p class="title4">食事管理</p>
+            <p class="meal">×</p>
+            <p class="title5">美容エステ</p>
+            <p class="beauty">×</p>
+            <p class="title6">マンツーマン</p>
+            <p class="man">×</p>
+          </div>
+        </div>
+        <div class="price__box mass fade-in">
+          <h3 class="price__name">整体</h3>
+          <p class="price__text">30分</p>
+          <p class="price__num">2,500<span class="price__yen">円</span></p>
+        </div>
+        <div class="price__box eating fade-in">
+          <h3 class="price__name">食事管理</h3>
+          <p class="price__text">月額</p>
+          <p class="price__num">15,000<span class="price__yen">円</span></p>
+        </div>
+        <div class="price__box goods fade-in">
+          <h3 class="price__name">各種レンタル</h3>
+          <div class="goods__flex">
+            <div class="goods__left">
+              <div class="goods__name">タオル</div>
+              <div class="goods__name">ウェア（上下）</div>
+              <div class="goods__name">シューズ</div>
+            </div>
+            <div class="goods__right">
+              <div class="goods__cost">350円</div>
+              <div class="goods__cost">850円</div>
+              <div class="goods__cost">600円</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn fade-in">
+        <a href="./apply.html" class="btn__link">入会する</a>
+      </div>
+    </section>
+    <section class="trial">
+      <h2 class="trial__title fade-in">体験申し込み</h2>
+      <p class="trial__text text fade-in">無料体験を受け付けております。<br>ぜひ一度雰囲気を体験してみませんか？</p>
+      <div class="trial__flex">
+        <div class="trial__box fade-in">
+          <h3 class="trial__step">1.WEB登録</h3>
+          <p class="trial__content">まずは登録ページからお申し込みください。必要事項や持ち物等をご登録のメールアドレス宛にお送りいたします。</p>
+        </div>
+        <div class="arrow fade-in"></div>
+        <div class="trial__box fade-in">
+          <h3 class="trial__step">2.来店</h3>
+          <p class="trial__content">持ち物等を確認し、ご予約の日時にご来店いただきます。必要書類の記入や簡単なオリエンテーションを行います。</p>
+        </div>
+        <div class="arrow fade-in"></div>
+        <div class="trial__box fade-in">
+          <h3 class="trial__step">3.無料体験</h3>
+          <p class="trial__content">実際にトレーニングを体験していただきます。各マシンの使い方から、体組成計による測定（希望者）などを行います。</p>
+        </div>
+      </div>
+      <div class="btn fade-in">
+        <a href="./apply.html" class="btn__link">無料体験</a>
+      </div>
+    </section>
+    <section class="store">
+      <h2 class="store__title fade-in">店舗一覧</h2>
+      <div class="store__grid">
+        <div class="store__box ome fade-in">
+          <h3 class="store__name">青梅店</h3>
+
+          <div class="store__wrap">
+            <div class="store__sub">住所</div>
+            <div class="store__content">東京都青梅市1-1-1</div>
+            <div class="store__sub">情報</div>
+            <div class="store__content">JR青梅駅から徒歩3分</div>
+          </div>
+          <div class="btn">
+            <a href="./index.html" class="btn__link">店舗詳細</a>
+          </div>
+        </div>
+        <div class="store__box sinjuku fade-in">
+          <h3 class="store__name">新宿東口店</h3>
+          <div class="store__wrap">
+            <div class="store__sub">住所</div>
+            <div class="store__content">東京都新宿区新宿1-1-1</div>
+            <div class="store__sub">情報</div>
+            <div class="store__content">新宿駅東口から徒歩3分</div>
+          </div>
+          <div class="btn">
+            <a href="./index.html" class="btn__link">店舗詳細</a>
+          </div>
+        </div>
+        <div class="store__box hachioji fade-in">
+          <h3 class="store__name">八王子店</h3>
+          <div class="store__wrap">
+            <div class="store__sub">住所</div>
+            <div class="store__content">東京都八王子市1-1-1</div>
+            <div class="store__sub">情報</div>
+            <div class="store__content">JR八王子駅から徒歩6分</div>
+          </div>
+          <div class="btn">
+            <a href="./index.html" class="btn__link">店舗詳細</a>
+          </div>
+        </div>
+        <div class="store__box tachikawa fade-in">
+          <h3 class="store__name">立川店</h3>
+          <div class="store__wrap">
+            <div class="store__sub">住所</div>
+            <div class="store__content">東京都立川市1-1-1</div>
+            <div class="store__sub">情報</div>
+            <div class="store__content">JR立川駅から徒歩6分</div>
+          </div>
+          <div class="btn">
+            <a href="./index.html" class="btn__link">店舗詳細</a>
+          </div>
+        </div>
+        <div class="store__box ogikubo fade-in">
+          <h3 class="store__name">荻窪店</h3>
+          <div class="store__wrap">
+            <div class="store__sub">住所</div>
+            <div class="store__content">東京都杉並区荻窪1-1-1</div>
+            <div class="store__sub">情報</div>
+            <div class="store__content">JR荻窪駅から徒歩2分</div>
+          </div>
+          <div class="btn">
+            <a href="./index.html" class="btn__link">店舗詳細</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="pageTop fade-in">
+      <p class="pageTop__text">PAGE TOP</p>
+    </div>
+    <footer class="footer">
+      <div class="btn">
+        <a href="./apply.html" class="btn__link">無料体験</a>
+      </div>
+      <div class="logo"><a href="./index.html" class="logo__link"><img src="./img/energy_zone_logo.png" alt="エナジーゾーン"
+            class="logo__img"></a></div>
+      <nav class="pcMenu">
+        <ul class="listPC">
+          <li class="listPC__item">
+            <a href="./about.html" class="listPC__link">
+              <div class="listPC__ja">エナジーゾーンとは</div>
+            </a>
+          </li>
+          <li class="listPC__item">
+            <a href="./facility.html" class="listPC__link">
+              <div class="listPC__ja">施設紹介</div>
+            </a>
+          </li>
+          <li class="listPC__item">
+            <a href="./price.html" class="listPC__link">
+              <div class="listPC__ja">料金プラン</div>
+            </a>
+          </li>
+          <li class="listPC__item">
+            <a href="./faq.html" class="listPC__link">
+              <div class="listPC__ja">よくある質問</div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="listSub">
+        <a href="./index.html" class="listSub__link">プライバシーポリシー</a>
+      </div>
+      <small class="copyright">&copy; ENERGY ZONE CO. ALL RIGHTS RESERVED.</small>
+    </footer>
+
+  </main>
+  <script src="./js/slick.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+<footer></footer>
+
+</html>

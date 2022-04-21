@@ -1,0 +1,116 @@
+@use "../../foundation" as fnd;
+
+// Works
+.works {
+  background-color: fnd.$navy;
+  // タイトルデザイン
+  &__title {
+    @include fnd.h2("実績");
+    margin-bottom: 100px;
+  }
+
+  .btn {
+    @include fnd.btn_works;
+  }
+}
+
+// slickカスタマイズ
+.slickList {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include fnd.mq("tab") {
+    width: 80%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+// }
+// 画像間margin
+.slick-slide {
+  margin: 0 -10px;
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.8; /*透過80%*/
+}
+.slick-now {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*矢印の設定*/
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute; /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer; /*マウスカーソルを指マークに*/
+  outline: none; /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid fnd.$white; /*矢印の色*/
+  border-right: 2px solid fnd.$white; /*矢印の色*/
+  height: 25px;
+  width: 25px;
+  @include fnd.mq("tab") {
+    top: 38%;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -10%;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  @include fnd.mq("tab") {
+    left: -1.5%;
+  }
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -10%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  @include fnd.mq("tab") {
+    right: -1.5%;
+  }
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  cursor: pointer;
+  color: transparent;
+  outline: none;
+  width: 8px; /*ドットボタンのサイズ*/
+  height: 8px; /*ドットボタンのサイズ*/
+  display: block;
+  background: fnd.$dark-gray; /*ドットボタンの色*/
+  border-width: 0;
+}
+
+.slick-dots .slick-active button {
+  background: fnd.$blue; /*ドットボタンの現在地表示の色*/
+  border-width: 0;
+}

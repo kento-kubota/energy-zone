@@ -1,0 +1,133 @@
+@use "../../foundation/"as fnd;
+
+.store {
+  margin-bottom: 100px;
+
+  &__title {
+    @include fnd.h2('STORE');
+  }
+
+  &__grid {
+    max-width: 870px;
+    margin: 70px auto 0;
+    display: grid;
+    grid-template:
+      "ome sinjuku hachioji"
+      "tachikawa ogikubo - "
+      / 1fr 1fr 1fr;
+    gap: 10px;
+
+    @include fnd.mq('pc') {
+      max-width: 640px;
+      grid-template:
+        "ome sinjuku"
+        "hachioji tachikawa"
+        "ogikubo -";
+    }
+
+    @include fnd.mq('tab') {
+      max-width: 320px;
+      grid-template:
+        "ome"
+        "sinjuku"
+        "hachioji"
+        "tachikawa"
+        "ogikubo";
+      gap: 20px;
+    }
+
+
+  }
+
+  &__box {
+    border: 1px solid fnd.$orange;
+    padding: 40px 30px;
+    border-radius: 5px;
+  }
+
+  &__name {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: fnd.$orange;
+    font-weight: bold;
+  }
+
+  &__wrap {
+    display: grid;
+    text-align: left;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    gap: 3px;
+    grid-template:
+      "sub1 content1"
+      "sub2 content2";
+
+
+    &:first-of-type {
+      grid-area: sub1;
+    }
+
+    &:nth-of-type(2) {
+      grid-area: sub2;
+    }
+
+    &:nth-child(3) {
+      grid-area: content1;
+    }
+
+    &:last-child {
+      grid-area: content2;
+    }
+  }
+
+  &__sub {
+    padding-right: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    font-size: 1.4rem;
+  }
+
+
+  .ome {
+    grid-area: ome;
+  }
+
+  .sinjuku {
+    grid-area: sinjuku;
+  }
+
+  .hachioji {
+    grid-area: hachioji;
+  }
+
+  .tachikawa {
+    grid-area: tachikawa;
+  }
+
+  .ogikubo {
+    grid-area: ogikubo;
+  }
+}
+
+.btn {
+  @include fnd.btn;
+  margin-top: 50px;
+  font-size: 1.4rem;
+  line-height: 30px;
+
+  @include fnd.mq('pc') {
+    margin-top: 35px;
+
+  }
+
+
+  &__link {
+    padding: 3px 37px;
+  }
+}

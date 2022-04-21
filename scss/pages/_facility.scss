@@ -1,0 +1,43 @@
+@use "../foundation/"as fnd;
+
+#facility {
+  .listPC__item {
+    &:nth-of-type(2) {
+      position: relative;
+      font-weight: bold;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 22px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: fnd.$orange;
+      }
+
+      &::before {
+        left: 10px;
+      }
+
+      &::after {
+        right: 10px;
+      }
+    }
+  }
+
+  .spMenu .list__item:nth-of-type(2) {
+    color: fnd.$orange;
+    font-weight: bold;
+  }
+
+  .detail {
+    &__h2 {
+      @include fnd.h2('FACILITY')
+    }
+  }
+
+}
